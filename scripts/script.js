@@ -11,10 +11,17 @@ let menuItem = {
   }
 
 menuItem.yearAdded = 2017;
-menuItem.availability = "lunch and dinner"
+menuItem.availability = ["lunch", "dinner"];
 delete menuItem.highInCalories;
 menuItem.numOfCalories = 560;
 delete menuItem.nickName;
 menuItem.ingredients.unshift("lemon juice");
 
-console.log(menuItem);
+
+// **WILL PRINT key/value pairs for menuItem
+console.log("\n\n******menuItem Object******");
+Object.entries(menuItem).forEach(([key, value]) => {
+  if (key != 'numIngredients')
+    console.log(`${key}: ${value}`)
+  });
+console.log(`Number of ingredients = ${menuItem.numIngredients()}`);
